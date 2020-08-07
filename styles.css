@@ -1,0 +1,269 @@
+/* ------------------------------ */
+/* FONTS ------------------------ */
+/* ------------------------------ */
+@font-face {
+  font-family: 'Klavika Bold';
+  src: url('assets/fonts/klavika-bold-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Klavika Light';
+  src: url('assets/fonts/klavika-light-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Klavika Medium';
+  src: url('assets/fonts/klavika-medium-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Klavika Regular';
+  src: url('assets/fonts/klavika-regular-webfont.woff') format('woff');
+}
+
+/* ------------------------------ */
+/* KEYFRAMES -------------------- */
+/* ------------------------------ */
+
+@keyframes float {
+  0% {
+    transform: translateY(15%);
+  }
+
+  50% {
+    transform: translateY(-15%);
+  }
+
+  100% {
+    transform: translateY(15%);
+  }
+}
+
+/* ------------------------------ */
+/* GENERAL ---------------------- */
+/* ------------------------------ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #ffffff;
+  font-family: 'Klavika Regular';
+  margin: 0;
+  text-decoration-color: white;
+}
+
+body::-webkit-scrollbar { 
+  display: none; 
+} 
+
+a {
+  color: #ffffff;
+}
+
+/* ------------------------------ */
+/* LOADING SCREEN --------------- */
+/* ------------------------------ */
+.loading-screen {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: opacity 0.2s ease-in-out;
+  width: 100%;
+  z-index: 100;
+}
+
+.loading-screen img {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ------------------------------ */
+/* WRAPPER AND BACKGROUND ------- */
+/* ------------------------------ */
+.wrapper {
+  display: flex;
+  filter: blur(7px);
+  height: 100vh;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.wrapper::-webkit-scrollbar { 
+  display: none; 
+} 
+
+.gradient-overlay {
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 88%,
+    rgba(15, 15, 15, 0.9) 93%,
+    #0f0f0f 100%
+  );
+  display:inline-block;
+}
+
+.background-image {
+  display: block;
+  filter: contrast(110%);
+  height: 100%;
+  position: relative;
+  z-index: -1;
+}
+
+.last-block {
+  align-items: flex-end;
+  background-color: #0f0f0f;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  min-width: 40%;
+  padding-right: 70px;
+  position: sticky;
+  text-align: right;
+}
+
+.last-block-title {
+  -webkit-text-stroke: 1px #000000; 
+  animation: float 3s ease-in-out infinite;
+  font-family: 'Klavika Bold';
+  font-size: 6em;
+  line-height: 1em;
+  margin-bottom: 80px;
+}
+
+.last-block-description {
+  font-size: 1.3em;
+  line-height: 1.8em;
+}
+
+/* ------------------------------ */
+/* ARROWS ----------------------- */
+/* ------------------------------ */
+.arrow {
+  -webkit-text-stroke: 1px #000000;
+  align-items: center;
+  display: flex;
+  font-size: 5.5em;
+  height: 90%;
+  position: fixed;
+}
+
+.arrow.left-arrow-wrapper {
+  left: 70px;
+}
+
+.arrow.right-arrow-wrapper {
+  right: 70px;
+}
+
+.arrow .left-arrow-icon,
+.arrow .right-arrow-icon {
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.arrow .left-arrow-icon:hover,
+.arrow .right-arrow-icon:hover {
+  transform: translateY(-4px);
+}
+
+.arrow .left-arrow-icon:active,
+.arrow .right-arrow-icon:active {
+  transform: translateY(4px);
+}
+
+.arrow .left-arrow-icon {
+  display: none;
+}
+
+/* ------------------------------ */
+/* TEXT PER PAGE ---------------- */
+/* ------------------------------ */
+.text-per-page {
+  -webkit-text-stroke: 1px #000000; 
+  font-family: 'Klavika Bold';
+  font-size: 5em;
+  line-height: 1em;
+  max-width: 30%;
+  min-width: 20%;
+  position: fixed;
+  transition: opacity 0.3s linear;
+}
+
+.right {
+  right: 226px;
+  text-align: right;
+}
+
+.left {
+  left: 226px;
+  text-align: left;
+}
+
+.top {
+  top: 70px;
+}
+
+.middle {
+  top: 50%;
+  transform: translateY(-70%);
+}
+
+.bottom {
+  bottom: 70px;
+}
+
+/* ------------------------------ */
+/* POSITIONS VIEWER ------------- */
+/* ------------------------------ */
+.positions-viewer {
+  border: 2px dashed #ffffff;
+  border-radius: 2px;
+  bottom: 70px;
+  display: grid;
+  font-size: 1.3em;
+  left: 70px;
+  position: fixed;
+}
+
+.positions-viewer span {
+  border-right: 2px dashed #ffffff;
+  cursor: pointer;
+  font-family: 'Klavika Bold';
+  margin: auto;
+  padding: 10px 15px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.positions-viewer span:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.positions-viewer span:last-child {
+  border-right: none;
+}
+
+.positions-viewer span.current {
+  background: #ffffff;
+  color: #000000;
+  cursor: default;
+}
+
+/* ------------------------------ */
+/* LOGO ------------------------- */
+/* ------------------------------ */
+.logo {
+  bottom: 40px;
+  color: #ffffff;
+  filter: invert(1);
+  position: fixed;
+  right: 70px;
+  width: 100px;
+}
