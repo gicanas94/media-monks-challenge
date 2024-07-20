@@ -1,3 +1,3 @@
-# MediaMonks Challenge
+# Media.Monks Challenge
 
 This project doesn't require any dependencies to run, just open `index.html` in your favorite browser 😎
